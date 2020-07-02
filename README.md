@@ -1,7 +1,3 @@
-<p align="center">
-  <a href="https://github.com/dorny/paths-filter/actions"><img alt="paths-filter status" src="https://github.com/dorny/paths-filter/workflows/Build/badge.svg"></a>
-</p>
-
 # Paths filter
 
 With this [Github Action](https://github.com/features/actions) you can execute your workflow steps only if relevant files are modified.
@@ -57,7 +53,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: dorny/paths-filter@v2.2.0
+    - uses: RealtimeRobotics/paths-filter@v2.2.0
       id: filter
       with:
         # inline YAML or path to separate file (e.g.: .github/filters.yaml)
@@ -100,7 +96,7 @@ jobs:
       frontend: ${{ steps.filter.outputs.frontend }}
     steps:
     # For pull requests it's not necessary to checkout the code
-    - uses: dorny/paths-filter@v2.2.0
+    - uses: RealtimeRobotics/paths-filter@v2.2.0
       id: filter
       with:
         # Filters stored in own yaml file
